@@ -122,12 +122,15 @@
 
   /* proof */
   .proof-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;margin-top:36px}
-  .case{background:var(--ink);color:#eef0f3;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:16px}
+  .case{background:var(--ink);color:#eef0f3;border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 220px;gap:28px;align-items:center}
+  .case .case-copy{display:flex;flex-direction:column;gap:14px;min-width:0}
   .case .eyebrow{color:#f0a37f}
-  .case h3{font-size:30px;color:#fff}
-  .case p{margin:0;color:#c8ccd4}
-  .case blockquote{margin:6px 0;padding-left:16px;border-left:3px solid var(--accent);font-family:var(--serif);font-size:20px;color:#fff}
-  .case .shot{margin-top:6px;border:1px dashed #4b515c;border-radius:10px;min-height:150px;flex:1;display:flex;align-items:center;justify-content:center;color:#8b93a1;font-size:14px}
+  .case h3{font-size:28px;color:#fff;margin:0}
+  .case p{margin:0;color:#c8ccd4;font-size:15px;line-height:1.55}
+  .case blockquote{margin:4px 0 0;padding-left:14px;border-left:3px solid var(--accent);font-family:var(--serif);font-size:18px;line-height:1.35;color:#fff}
+  .case .shot{margin:0;padding:0;border:none;background:transparent;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .case .shot img{display:block;width:100%;max-width:210px;height:auto;filter:drop-shadow(0 16px 24px rgba(0,0,0,.55))}
+  .case .shot figcaption{margin:0;font-size:11px;letter-spacing:.03em;text-transform:uppercase;color:#8b93a1;text-align:center}
   .facts{display:grid;gap:14px}
   .fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
   .fact b{display:block;font-size:16px;margin-bottom:2px}
@@ -200,8 +203,10 @@
     .about-grid .candid{max-width:300px}
     .hero h1{font-size:38px}
     .loop{margin:0 -8px}
-    .case{padding:26px}
+    .case{padding:24px;grid-template-columns:1fr;gap:22px}
     .case h3{font-size:26px}
+    .case .shot{order:-1}
+    .case .shot img{max-width:180px}
     .diff{font-size:12px;padding:16px}
     .offer{padding:24px}
     .contact-list li{flex-direction:column;gap:2px}
@@ -414,10 +419,16 @@
     <h2>I run this every day before I sell it.</h2>
     <div class="proof-grid">
       <div class="case">
-        <p class="eyebrow">Live case study</p>
-        <h3>Based Budget</h3>
-        <p>A personal-finance app with an AI assistant named Finn, at <a href="https://getbased.app" target="_blank" rel="noopener" style="color:#fff">getbased.app</a>. I build it with the harness above, a few hours a day, as a product owner more than a programmer.</p>
-        <blockquote>With this setup, I don't even look at code any more.</blockquote>
+        <div class="case-copy">
+          <p class="eyebrow">Live case study</p>
+          <h3>Based Budget</h3>
+          <p>A personal-finance app with an AI assistant named Finn, at <a href="https://getbased.app" target="_blank" rel="noopener" style="color:#fff">getbased.app</a>. Built with the harness above, a few hours a day, as a product owner more than a programmer.</p>
+          <blockquote>With this setup, I don't even look at code any more.</blockquote>
+        </div>
+        <figure class="shot">
+          <img src="img/based-budget-finn-phone.png" alt="Based Budget: Finn answering a dog-spending question" width="210" height="452">
+          <figcaption>Finn · getbased.app</figcaption>
+        </figure>
       </div>
       <div class="facts">
         <div class="fact"><b>VP of Software Engineering, Broadvoice (2018 to 2024)</b><span>Created a one-ticket, one-deployment process and incremental agile releases that improved operational efficiency by 30%. Made 100% uptime SLAs profitable to offer through architecture and observability. Led 40+ engineers across 6 time zones with an eNPS of 90+, and scaled the team 650%. Also led a zero-downtime migration to AWS.</span></div>
