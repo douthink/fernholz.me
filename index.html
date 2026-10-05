@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jerry Fernholz | Trustworthy AI coding agents, in short sprints</title>
-<meta name="description" content="I help engineering teams put AI coding agents on a hardened process so the output is trustworthy. Provider-agnostic. One and two week engagements.">
+<title>Jerry Fernholz | AI made code cheap to write. I make it trustworthy.</title>
+<meta name="description" content="Review queues pile up and tests pass while the code is wrong. In 1 to 2 weeks I install the gates, outcome tests, outer review loop, and evals that catch what AI coding agents get wrong before it merges. Any coding agent.">
 <style>
   :root{
     --ink:#16181d; --ink-2:#3b404a; --muted:#6b7280; --paper:#faf8f4; --card:#ffffff;
@@ -85,6 +85,11 @@
   .pain{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
   .pain h3{font-size:18px;margin-bottom:6px}
   .pain p{margin:0;font-size:15px;color:var(--ink-2)}
+  .symptoms{list-style:none;padding:0;margin:0 0 18px}
+  .symptoms li{position:relative;padding:8px 0 8px 22px;border-bottom:1px solid var(--line);font-size:16.5px;color:var(--ink-2)}
+  .symptoms li:last-child{border-bottom:0}
+  .symptoms li b{color:var(--ink)}
+  .symptoms li::before{content:"";position:absolute;left:3px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
   .rules{list-style:none;padding:0;margin:20px 0 0}
   .rules li{font-family:var(--mono);font-size:14px;background:var(--green-soft);color:var(--green);border-radius:6px;padding:8px 12px;margin-bottom:8px}
 
@@ -231,9 +236,9 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">AI coding agents, made trustworthy &middot; any provider</p>
+        <p class="eyebrow">Engineering process for teams shipping AI-written code</p>
         <h1><span class="l1">AI made code cheap to write.</span> <em>I make it trustworthy.</em></h1>
-        <p class="lede">I help engineering teams put their AI coding agents on a hardened process: gates that check outcomes, sub-agents with small contexts, an outer loop that reviews every PR, and evals built from real feedback. Short sprints, in your repo, on your tools.</p>
+        <p class="lede">Review queues pile up. Tests pass while the code is wrong. Reverts climb and docs drift. Agents didn't invent these problems; they speed up the damage. In&nbsp;1&nbsp;to&nbsp;2&nbsp;weeks I install the gates and outer loop that catch what agents get wrong before it merges.</p>
         <div class="cta-row">
           <a class="btn" href="https://calendly.com/jerry-fernholz/30min" target="_blank" rel="noopener">Book a 30-min call</a>
           <a class="btn ghost" href="#offers">See the offers</a>
@@ -260,9 +265,17 @@
 <section id="problem">
   <div class="wrap problem-grid">
     <div>
-      <p class="eyebrow">The problem</p>
+      <p class="eyebrow">What breaks</p>
       <h2>Clean diffs. Bad premises.</h2>
-      <p class="lede">Agents are very good at producing code that looks right. The tests pass, the diff is tidy, the PR description is confident. What goes wrong is upstream: the agent misread the ticket, tested that a method was called instead of what it did, or shipped a feature nothing downstream can use.</p>
+      <p class="lede">Agents produce code that looks right, faster than people can check it. The tests pass, the diff is tidy, the PR description is confident. The damage shows up in places you already watch:</p>
+      <ul class="symptoms">
+        <li><b>Review queues pile up</b>, or reviews quietly turn into skims.</li>
+        <li><b>Tests pass while the code is wrong</b>, because they check that a method was called, not what it did.</li>
+        <li><b>Reverts and hotfixes climb.</b></li>
+        <li><b>Docs drift out of date</b>, and the next agent reads the stale version.</li>
+        <li><b>Release discipline slips</b>: bigger PRs, mixed changes, and one ticket no longer means one change.</li>
+      </ul>
+      <p>The fix isn't a new tool or a reorg. It's a few checks the agent can't skip. Usually the cause is upstream: the agent misread the ticket, tested the wrong thing, or shipped a feature nothing downstream can use.</p>
       <div class="two">
         <div class="pain"><h3>Review every line</h3><p>Safe, but you gave back most of the speed you bought.</p></div>
         <div class="pain"><h3>Trust the output</h3><p>Fast, until a quiet failure reaches a customer.</p></div>
@@ -297,7 +310,7 @@
       <article class="offer">
         <h3>Agent Readiness Review</h3>
         <div class="meta">1 week &middot; remote</div>
-        <p class="outcome">A straight answer on where your AI coding workflow will hurt you, and a ranked list of fixes.</p>
+        <p class="outcome">A straight answer on where AI-written code gets past your review and tests, and a ranked list of fixes.</p>
         <ul>
           <li>Review of agent configs, repo rules, CI gates, and recent AI-assisted PRs</li>
           <li>Written findings with severity and effort</li>
@@ -310,7 +323,7 @@
         <span class="tag">Most teams start here</span>
         <h3>AI Dev Workflow Sprint</h3>
         <div class="meta">2 weeks &middot; in your repo &middot; remote or onsite</div>
-        <p class="outcome">Your team ships agent-built PRs through a harness it trusts: inner loop, outer loop, gates, and evals.</p>
+        <p class="outcome">Your repo catches what agents get wrong before it merges: gates that check outcomes, an outer loop that catches wrong premises, and evals from your real tickets.</p>
         <ul>
           <li>Command pipeline from request to merged PR, tuned to your stack</li>
           <li>Sub-agents: test author, implementer, and architecture reviewer</li>
@@ -331,7 +344,7 @@
   <div class="wrap">
     <p class="eyebrow">How it works</p>
     <h2>Two loops. One builds, one watches.</h2>
-    <p class="lede">This is the setup I run on my own product every day. In a sprint I adapt it to your repo, your tools, and your team's habits. It's plain files in your repo, so it works with whichever coding agent you use.</p>
+    <p class="lede">This is the setup I run on my own product every day. In a sprint I adapt it to your repo and your team's habits. It's plain files and CI gates in your repo, not a tool rollout. <b>Interfaces change every quarter. The gates in your repo don't.</b></p>
     <div class="how-grid">
       <div class="loop">
         <svg viewBox="-70 0 780 640" role="img" aria-labelledby="loopTitle loopDesc">
@@ -432,7 +445,7 @@
       <p>I started as an electrical engineer (BS from UCLA, MS from CSUN), first as a satellite engineer at General Dynamics, then as a principal engineer and integrated product team lead at LinQuest, building satellite network simulation for US Space Command.</p>
       <p>In 2012 I founded Rentables and took it from <code>rails new</code> to hundreds of paying customers. From 2018 to 2024 I was VP of Software Engineering at Broadvoice, where the work I'm proudest of was process: one ticket, one deployment, and a team of 40+ engineers across six time zones that kept an eNPS of 90+ while it grew 650%.</p>
       <p>These days I live in the LA area, own rental properties, and get up to Mammoth whenever I can. Most days I'm building Based Budget with AI agents. On the side, my wife Christy and I make <a href="https://petsforeverstorybooks.com" target="_blank" rel="noopener">Pets Forever Storybooks</a>.</p>
-      <p>Consulting is part-time on purpose. I take one engagement at a time, keep it short, and give it my full attention. If your team wants AI agents it can trust, I'd like to hear what you're working on.</p>
+      <p>Consulting is part-time on purpose. I take one engagement at a time, keep it short, and give it my full attention. If AI-written code is getting past your reviews and tests, I'd like to hear what you're working on.</p>
     </div>
   </div>
 </section>
@@ -443,14 +456,15 @@
     <p class="eyebrow">FAQ</p>
     <h2>Questions teams ask</h2>
     <div class="faq">
-      <details open><summary>How available are you?</summary><p>Part-time by design. I run one engagement at a time, roughly 10 to 15 hours a week, scheduled as 1 or 2 week sprints. Next openings start in January 2027, and I&rsquo;m booking them now.</p></details>
-      <details open><summary>Which tools do you work with?</summary><p>Whatever your team already uses: Claude Code, Cursor, Codex, Copilot, Grok, or a mix. My daily driver right now is the Grok Build CLI, and I used Claude Code before that. The harness is plain files in your repo (commands, agent definitions, rules, gates, and evals), so it keeps working if you switch providers.</p></details>
+      <details open><summary>How available are you?</summary><p>Part-time by design. I run one engagement at a time, roughly 10 to 15 hours a week, scheduled as 1 or 2 week sprints. Because I take one at a time, we&rsquo;ll agree on a start date on the call.</p></details>
+      <details open><summary>Will this still matter when the tools change?</summary><p>That's the point. Interfaces change every quarter. The gates in your repo don't. Outcome tests, review that scales, one ticket per deployment, docs that can't quietly go stale: these were good engineering before agents, and they'll outlast this generation of tools.</p></details>
       <details open><summary>Remote or onsite?</summary><p>Remote by default. For the 2-week Sprint I can also work onsite, in LA or elsewhere, with travel and lodging covered by you. Onsite works best for the kickoff and the two working sessions.</p></details>
       <details open><summary>Will you sign an NDA?</summary><p>Yes. A mutual NDA before I see any code is standard. I work inside your environment with the access you grant, and nothing leaves it.</p></details>
       <details><summary>We tried rules files. Agents ignore them. Why would this work?</summary><p>Rules alone often do get ignored, usually because one agent is holding too much context. Small sub-agents, gates that block on outcomes, and an outer loop that checks the work are what make rules stick. If you're skeptical, start with the Readiness Review and judge the findings.</p></details>
       <details><summary>Do you write the code?</summary><p>The harness writes the code. My job is to set it up so your engineers trust what it produces, and to leave them able to run and improve it without me.</p></details>
       <details><summary>How will leadership know it's working?</summary><p>Every Sprint starts with a baseline and ends with before and after numbers: how much of the work goes through the agents, PR throughput and review time, and what the gates caught. If you want those numbers on one page your leadership checks weekly, I can add a small dashboard. Ask on the call.</p></details>
       <details><summary>What happens after the sprint?</summary><p>A 30-day check-in is included. After that you can book another sprint if you want one. There is no retainer.</p></details>
+      <details><summary>Which coding agent do I need?</summary><p>Any of them, or a mix. The work is gates, tests, and a review loop in your repo, so nothing depends on the tool. My daily driver is the Grok Build CLI. Disclosure: I'm an investor in SpaceX, which owns xAI, the company that makes Grok. I recommend Grok because it's what I use every day; everything I set up also works with other tools.</p></details>
       <details><summary>Do you do cloud migrations or MVP builds?</summary><p>Not as offers. I've led a zero-downtime migration to AWS, but projects like that take months and I keep engagements short.</p></details>
     </div>
   </div>
@@ -462,7 +476,7 @@
     <div>
       <p class="eyebrow" style="color:#f0a37f">Contact</p>
       <h2>Book a 30-minute call.</h2>
-      <p class="lede">Tell me what your team is building and how agents fit in today. You'll leave with at least one thing to try, whether or not we work together.</p>
+      <p class="lede">Tell me what's getting past review today: wrong premises, tests that check the wrong thing, reverts, stale docs. You'll leave with at least one thing to try, whether or not we work together.</p>
       <div class="cta-row" style="margin-top:28px"><a class="btn" href="https://calendly.com/jerry-fernholz/30min" target="_blank" rel="noopener">Book a call</a></div>
     </div>
     <ul class="contact-list">
